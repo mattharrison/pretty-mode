@@ -186,7 +186,7 @@ expected by `pretty-patterns'"
            ("\\" haskell))
        (?π ("pi" ,@all)
            ("M_PI" c c++))
-       (?φ ("psi" ,@all))
+       (?φ ("phi" ,@all))
 
        (?² ("**2" python tuareg octave)
            ("^2" octave haskell))
