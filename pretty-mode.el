@@ -157,7 +157,7 @@ expected by `pretty-patterns'"
        (?∅ ("nil" emacs-lisp ruby)
            ("null" scheme java)
            ("NULL" c c++)
-;;;        ("None" python)
+           ("None" python)
            ("()" ,@mley))
 ;;;    (?… ("\\.\\.\\." scheme))
 ;;;    (?∀ ("List.for_all" tuareg))
@@ -165,6 +165,8 @@ expected by `pretty-patterns'"
 ;;;    (?∈ ("List.mem" tuareg)
 ;;;        ("member" ,@lispy))
 ;;;    (?∉ ())
+       (?∈ ("in" python))
+       (?∉ ("not in" python))
        (?√ ("sqrt" ,@all))
        (?∑ ("sum" python))
        (?α ("alpha" ,@all)
@@ -213,6 +215,7 @@ expected by `pretty-patterns'"
 
 ;;;    (?∙ ())
 ;;;    (?× ())
+       (?∙ ("*" python))
 ;;;    (?ₐ ("[a]" ,@c-like)
 ;;;        ("(a)" octave))
 ;;;    (?ₓ ("[x]" ,@c-like)
@@ -226,7 +229,12 @@ expected by `pretty-patterns'"
 ;;;    (?⋂ "\\<intersection\\>"   (,@lispen))
 ;;;    (?⋃ "\\<union\\>"          (,@lispen))
 
-   
+       (?∧ ("and"     emacs-lisp lisp python))
+       (?∨ ("or"      emacs-lisp lisp python))
+
+       (?¬ ("not" python))
+       (?∀ ("all" python))
+       (?∃ ("any" python))
 ;;;    (?∧ ("\\<And\\>"     emacs-lisp lisp python)
 ;;;        ("\\<andalso\\>" sml)
 ;;;        ("&&"            c c++ perl haskell))
