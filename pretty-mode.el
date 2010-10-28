@@ -152,6 +152,7 @@ expected by `pretty-patterns'"
        (?≥ (">=" ,@all))
        (?← ("<-" ,@mley ess)
             ("=" ,@c-like))
+       (?= ("==" ,@c-like))
        (?➛ ("->" ,@mley ess c c++ perl))
        (?↑ ("\\^" tuareg))
        (?⟹ ("=>" sml perl ruby haskell))
