@@ -20,7 +20,8 @@
 
 ;;; Code:
 
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 (defvar pretty-syntax-types '(?_ ?w))
 
