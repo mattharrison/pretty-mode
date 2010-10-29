@@ -90,7 +90,7 @@ Pretty mode builds on `font-lock-mode'. Instead of highlighting
 keywords, it replaces them with symbols. For example, lambda is
 displayed as λ in lisp modes."
   :group 'pretty
- :lighter " λ"
+  :lighter " λ"
   (if pretty-mode
       (progn
         (font-lock-add-keywords nil (pretty-keywords) t)
@@ -151,9 +151,7 @@ expected by `pretty-patterns'"
            ("/=" haskell emacs-lisp))
        (?≤ ("<=" ,@all))
        (?≥ (">=" ,@all))
-       (?← ("<-" ,@mley ess)
-            ("=" ,@c-like))
-       (?= ("==" ,@c-like))
+       (?← ("<-" ,@mley ess))
        (?➛ ("->" ,@mley ess c c++ perl))
        (?↑ ("\\^" tuareg))
        (?⟹ ("=>" sml perl ruby haskell))
