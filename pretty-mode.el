@@ -2,18 +2,18 @@
 ;;; -*- coding: utf-8 -*-
 
 ;;; Commentary:
-;; 
+;;
 ;; Minor mode for redisplaying parts of the buffer as pretty symbols
 ;; originally modified from Trent Buck's version at http://paste.lisp.org/display/42335,2/raw
 ;; Also includes code from `sml-mode'
 ;; See also http://www.emacswiki.org/cgi-bin/wiki/PrettyLambda
-;; 
+;;
 ;; Released under the GPL. No implied warranties, etc. Use at your own risk.
 ;; Arthur Danskin <arthurdanskin@gmail.com>, March 2008
 ;;
 ;; to install:
 ;; (require 'pretty-mode)
-;; and 
+;; and
 ;; (global-pretty-mode 1)
 ;; or
 ;; (add-hook 'my-pretty-language-hook 'turn-on-pretty-mode)
@@ -129,7 +129,7 @@ expected by `pretty-patterns'"
                       (let* ((mode (intern (concat (symbol-name mode)
                                                    "-mode")))
                              (assoc-pair (assoc mode pretty-patterns))
-                            
+
                              (entry (cons regexp glyph)))
                         (if assoc-pair
                             (push entry (cdr assoc-pair))
@@ -179,6 +179,8 @@ expected by `pretty-patterns'"
            ("'d" ,@mley))
        (?ε ("epsilon" ,@all))
        (?θ ("theta" ,@all))
+       (?σ ("sigma" ,@all))
+       (?μ ("mu" ,@all))
        (?λ ("lambda" ,@all)
 ;;;        ("case-\\(lambda\\)" scheme)
            ("fn" sml)
@@ -268,7 +270,7 @@ relevant buffer(s)."
 
 (defun pretty-regexp (regexp glyph)
   "Replace REGEXP with GLYPH in buffer."
-  (interactive "MRegexp to replace: 
+  (interactive "MRegexp to replace:
 MCharacter to replace with: ")
   (pretty-add-keywords nil `((,regexp . ,(string-to-char glyph))))
   (font-lock-fontify-buffer))
